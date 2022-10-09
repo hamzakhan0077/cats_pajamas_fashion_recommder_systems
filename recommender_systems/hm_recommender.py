@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import euclidean_distances
 import numpy.linalg as npla
 from math import sqrt
 from pprint import pprint
-
+import random
 
 test_df = pd.read_csv("datasets/all_mix.csv")
 
@@ -25,6 +25,8 @@ pd.set_option("display.max_rows", None)
 
 def product_info():
     print(articles_df.shape)
+    # print(articles_df['prod_name'].describe(), '\n')
+    # print(articles_df['prod_name'].value_counts(dropna=False), '\n')
 
     # print(articles_df['product_group_name'].describe(), '\n')
     # print(articles_df['product_group_name'].value_counts(dropna=False),'\n')
@@ -61,8 +63,8 @@ def customer_info():
     # print(transaction_df[''].describe(), '\n')
     # print(transaction_df.groupby('customer_id')['price'].aggregate('sum'))
     # print(transaction_df.groupby('customer_id')['price'].aggregate('sum').describe())
-    # print(transaction_df.groupby('customer_id')['price'])
-    pass
+    # print(transaction_df.groupby('customer_id')['price'].aggregate('sum').nlargest(3))
+
 
 
 
@@ -81,21 +83,34 @@ def transaction_info():
 
 
 
-transaction_info()
+
+# transaction_info()
 
 
 
 
+
+customers = customers_df.to_records()[-5:]
 
 
 
 def random_recommender(customer):
-    pass
+    print(f"{customer.customer_id} ", random.choice(articles_df[['article_id','product_group_name','prod_name','colour_group_name']].values))
+
+
+# for customer in customers:
+#     random_recommender(customer)
+
 
 
 
 def  popularity_recommender(customer):
-    pass
+    # Top 5 most bought
+    popular_products = transaction_df['article_id'].value_counts().nlargest(5).to_frame()['article_id'].keys().values
+    for product in popular_products:
+        print(articles_df[['prod_name','product_group_name','colour_group_name']][articles_df['article_id'] == product],'\n')
+
+popularity_recommender(customers[1])
 
 
 
