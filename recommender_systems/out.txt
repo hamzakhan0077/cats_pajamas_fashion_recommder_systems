@@ -148,4 +148,759 @@ Nike Mens White Polo T-shirt                        1
 Belmonte Men Solid Blue Shirts                      1
 Puma Men's Toe Crusher Black T-shirt                1
 Fossil Women Pink Dial Chronograph Watch ES3050     1
+Name: productDisplayName, Length: 31135, dtype: int64Men       22165
+Women     18632
+Unisex     2164
+Boys        830
+Girls       655
+Name: gender, dtype: int64Apparel           21400
+Accessories       11289
+Footwear           9222
+Personal Care      2404
+Free Items          105
+Sporting Goods       25
+Home                  1
+Name: masterCategory, dtype: int64Topwear                     15405
+Shoes                        7344
+Bags                         3055
+Bottomwear                   2694
+Watches                      2542
+Innerwear                    1808
+Jewellery                    1080
+Eyewear                      1073
+Fragrance                    1012
+Sandal                        963
+Wallets                       933
+Flip Flops                    915
+Belts                         811
+Socks                         698
+Lips                          527
+Dress                         478
+Loungewear and Nightwear      470
+Saree                         427
+Nails                         329
+Makeup                        307
+Headwear                      293
+Ties                          258
+Accessories                   143
+Scarves                       118
+Cufflinks                     108
+Apparel Set                   106
+Free Gifts                    104
+Stoles                         90
+Skin Care                      77
+Skin                           69
+Eyes                           43
+Mufflers                       38
+Shoe Accessories               24
+Sports Equipment               21
+Gloves                         20
+Hair                           19
+Bath and Body                  12
+Water Bottle                    7
+Perfumes                        6
+Umbrellas                       6
+Beauty Accessories              4
+Wristbands                      4
+Sports Accessories              3
+Home Furnishing                 1
+Vouchers                        1
+Name: subCategory, dtype: int64Tshirts                7070
+Shirts                 3217
+Casual Shoes           2846
+Watches                2542
+Sports Shoes           2036
+                       ... 
+Shoe Laces                1
+Mens Grooming Kit         1
+Body Wash and Scrub       1
+Suits                     1
+Ipad                      1
+Name: articleType, Length: 143, dtype: int64Black                9732
+White                5540
+Blue                 4922
+Brown                3494
+Grey                 2741
+Red                  2458
+Green                2116
+Pink                 1861
+Navy Blue            1791
+Purple               1643
+Silver               1090
+Yellow                779
+Beige                 749
+Gold                  629
+Maroon                581
+Orange                530
+Olive                 410
+Multi                 394
+Cream                 390
+Steel                 315
+Charcoal              228
+Peach                 195
+Off White             182
+Skin                  179
+Lavender              162
+Grey Melange          146
+Khaki                 139
+Magenta               129
+Teal                  120
+Tan                   114
+Mustard                97
+Bronze                 95
+Copper                 86
+Turquoise Blue         69
+Rust                   66
+Burgundy               45
+Metallic               43
+Coffee Brown           31
+Mauve                  29
+Rose                   28
+Nude                   23
+Sea Green              22
+Mushroom Brown         16
+Taupe                  11
+Lime Green              6
+Fluorescent Green       5
+Name: baseColour, dtype: int64Summer    21476
+Fall      11445
+Winter     8519
+Spring     2985
+Name: season, dtype: int642012.0    16290
+2011.0    13689
+2016.0     6007
+2017.0     2917
+2015.0     2780
+2013.0     1213
+2010.0      846
+2018.0      405
+2014.0      236
+2019.0       33
+2009.0       20
+2008.0        7
+2007.0        2
+Name: year, dtype: int64Casual          34414
+Sports           4025
+Ethnic           3208
+Formal           2359
+Smart Casual       67
+Party              29
+Travel             26
+Home                1
+Name: usage, dtype: int64Lucera Women Silver Earrings                       82
+Lucera Women Silver Pendant                        56
+Lucera Women Silver Ring                           50
+Catwalk Women Black Heels                          48
+Q&Q Men Black Dial Watch                           42
+                                                   ..
+Spykar Men Navy Blue Trevor Brief                   1
+Nike Mens White Polo T-shirt                        1
+Belmonte Men Solid Blue Shirts                      1
+Puma Men's Toe Crusher Black T-shirt                1
+Fossil Women Pink Dial Chronograph Watch ES3050     1
+Name: productDisplayName, Length: 31135, dtype: int64Men       22165
+Women     18632
+Unisex     2164
+Boys        830
+Girls       655
+Name: gender, dtype: int64Apparel           21400
+Accessories       11289
+Footwear           9222
+Personal Care      2404
+Free Items          105
+Sporting Goods       25
+Home                  1
+Name: masterCategory, dtype: int64Topwear                     15405
+Shoes                        7344
+Bags                         3055
+Bottomwear                   2694
+Watches                      2542
+Innerwear                    1808
+Jewellery                    1080
+Eyewear                      1073
+Fragrance                    1012
+Sandal                        963
+Wallets                       933
+Flip Flops                    915
+Belts                         811
+Socks                         698
+Lips                          527
+Dress                         478
+Loungewear and Nightwear      470
+Saree                         427
+Nails                         329
+Makeup                        307
+Headwear                      293
+Ties                          258
+Accessories                   143
+Scarves                       118
+Cufflinks                     108
+Apparel Set                   106
+Free Gifts                    104
+Stoles                         90
+Skin Care                      77
+Skin                           69
+Eyes                           43
+Mufflers                       38
+Shoe Accessories               24
+Sports Equipment               21
+Gloves                         20
+Hair                           19
+Bath and Body                  12
+Water Bottle                    7
+Perfumes                        6
+Umbrellas                       6
+Beauty Accessories              4
+Wristbands                      4
+Sports Accessories              3
+Home Furnishing                 1
+Vouchers                        1
+Name: subCategory, dtype: int64Tshirts                7070
+Shirts                 3217
+Casual Shoes           2846
+Watches                2542
+Sports Shoes           2036
+                       ... 
+Shoe Laces                1
+Mens Grooming Kit         1
+Body Wash and Scrub       1
+Suits                     1
+Ipad                      1
+Name: articleType, Length: 143, dtype: int64Black                9732
+White                5540
+Blue                 4922
+Brown                3494
+Grey                 2741
+Red                  2458
+Green                2116
+Pink                 1861
+Navy Blue            1791
+Purple               1643
+Silver               1090
+Yellow                779
+Beige                 749
+Gold                  629
+Maroon                581
+Orange                530
+Olive                 410
+Multi                 394
+Cream                 390
+Steel                 315
+Charcoal              228
+Peach                 195
+Off White             182
+Skin                  179
+Lavender              162
+Grey Melange          146
+Khaki                 139
+Magenta               129
+Teal                  120
+Tan                   114
+Mustard                97
+Bronze                 95
+Copper                 86
+Turquoise Blue         69
+Rust                   66
+Burgundy               45
+Metallic               43
+Coffee Brown           31
+Mauve                  29
+Rose                   28
+Nude                   23
+Sea Green              22
+Mushroom Brown         16
+Taupe                  11
+Lime Green              6
+Fluorescent Green       5
+Name: baseColour, dtype: int64Summer    21476
+Fall      11445
+Winter     8519
+Spring     2985
+Name: season, dtype: int642012.0    16290
+2011.0    13689
+2016.0     6007
+2017.0     2917
+2015.0     2780
+2013.0     1213
+2010.0      846
+2018.0      405
+2014.0      236
+2019.0       33
+2009.0       20
+2008.0        7
+2007.0        2
+Name: year, dtype: int64Casual          34414
+Sports           4025
+Ethnic           3208
+Formal           2359
+Smart Casual       67
+Party              29
+Travel             26
+Home                1
+Name: usage, dtype: int64Lucera Women Silver Earrings                       82
+Lucera Women Silver Pendant                        56
+Lucera Women Silver Ring                           50
+Catwalk Women Black Heels                          48
+Q&Q Men Black Dial Watch                           42
+                                                   ..
+Spykar Men Navy Blue Trevor Brief                   1
+Nike Mens White Polo T-shirt                        1
+Belmonte Men Solid Blue Shirts                      1
+Puma Men's Toe Crusher Black T-shirt                1
+Fossil Women Pink Dial Chronograph Watch ES3050     1
+Name: productDisplayName, Length: 31135, dtype: int64Men       22165
+Women     18632
+Unisex     2164
+Boys        830
+Girls       655
+Name: gender, dtype: int64Apparel           21400
+Accessories       11289
+Footwear           9222
+Personal Care      2404
+Free Items          105
+Sporting Goods       25
+Home                  1
+Name: masterCategory, dtype: int64Topwear                     15405
+Shoes                        7344
+Bags                         3055
+Bottomwear                   2694
+Watches                      2542
+Innerwear                    1808
+Jewellery                    1080
+Eyewear                      1073
+Fragrance                    1012
+Sandal                        963
+Wallets                       933
+Flip Flops                    915
+Belts                         811
+Socks                         698
+Lips                          527
+Dress                         478
+Loungewear and Nightwear      470
+Saree                         427
+Nails                         329
+Makeup                        307
+Headwear                      293
+Ties                          258
+Accessories                   143
+Scarves                       118
+Cufflinks                     108
+Apparel Set                   106
+Free Gifts                    104
+Stoles                         90
+Skin Care                      77
+Skin                           69
+Eyes                           43
+Mufflers                       38
+Shoe Accessories               24
+Sports Equipment               21
+Gloves                         20
+Hair                           19
+Bath and Body                  12
+Water Bottle                    7
+Perfumes                        6
+Umbrellas                       6
+Beauty Accessories              4
+Wristbands                      4
+Sports Accessories              3
+Home Furnishing                 1
+Vouchers                        1
+Name: subCategory, dtype: int64Tshirts                7070
+Shirts                 3217
+Casual Shoes           2846
+Watches                2542
+Sports Shoes           2036
+                       ... 
+Shoe Laces                1
+Mens Grooming Kit         1
+Body Wash and Scrub       1
+Suits                     1
+Ipad                      1
+Name: articleType, Length: 143, dtype: int64Black                9732
+White                5540
+Blue                 4922
+Brown                3494
+Grey                 2741
+Red                  2458
+Green                2116
+Pink                 1861
+Navy Blue            1791
+Purple               1643
+Silver               1090
+Yellow                779
+Beige                 749
+Gold                  629
+Maroon                581
+Orange                530
+Olive                 410
+Multi                 394
+Cream                 390
+Steel                 315
+Charcoal              228
+Peach                 195
+Off White             182
+Skin                  179
+Lavender              162
+Grey Melange          146
+Khaki                 139
+Magenta               129
+Teal                  120
+Tan                   114
+Mustard                97
+Bronze                 95
+Copper                 86
+Turquoise Blue         69
+Rust                   66
+Burgundy               45
+Metallic               43
+Coffee Brown           31
+Mauve                  29
+Rose                   28
+Nude                   23
+Sea Green              22
+Mushroom Brown         16
+Taupe                  11
+Lime Green              6
+Fluorescent Green       5
+Name: baseColour, dtype: int64Summer    21476
+Fall      11445
+Winter     8519
+Spring     2985
+Name: season, dtype: int642012.0    16290
+2011.0    13689
+2016.0     6007
+2017.0     2917
+2015.0     2780
+2013.0     1213
+2010.0      846
+2018.0      405
+2014.0      236
+2019.0       33
+2009.0       20
+2008.0        7
+2007.0        2
+Name: year, dtype: int64Casual          34414
+Sports           4025
+Ethnic           3208
+Formal           2359
+Smart Casual       67
+Party              29
+Travel             26
+Home                1
+Name: usage, dtype: int64Lucera Women Silver Earrings                       82
+Lucera Women Silver Pendant                        56
+Lucera Women Silver Ring                           50
+Catwalk Women Black Heels                          48
+Q&Q Men Black Dial Watch                           42
+                                                   ..
+Spykar Men Navy Blue Trevor Brief                   1
+Nike Mens White Polo T-shirt                        1
+Belmonte Men Solid Blue Shirts                      1
+Puma Men's Toe Crusher Black T-shirt                1
+Fossil Women Pink Dial Chronograph Watch ES3050     1
+Name: productDisplayName, Length: 31135, dtype: int64Men       22165
+Women     18632
+Unisex     2164
+Boys        830
+Girls       655
+Name: gender, dtype: int64Men       22165
+Women     18632
+Unisex     2164
+Boys        830
+Girls       655
+Name: gender, dtype: int64Apparel           21400
+Accessories       11289
+Footwear           9222
+Personal Care      2404
+Free Items          105
+Sporting Goods       25
+Home                  1
+Name: masterCategory, dtype: int64Topwear                     15405
+Shoes                        7344
+Bags                         3055
+Bottomwear                   2694
+Watches                      2542
+Innerwear                    1808
+Jewellery                    1080
+Eyewear                      1073
+Fragrance                    1012
+Sandal                        963
+Wallets                       933
+Flip Flops                    915
+Belts                         811
+Socks                         698
+Lips                          527
+Dress                         478
+Loungewear and Nightwear      470
+Saree                         427
+Nails                         329
+Makeup                        307
+Headwear                      293
+Ties                          258
+Accessories                   143
+Scarves                       118
+Cufflinks                     108
+Apparel Set                   106
+Free Gifts                    104
+Stoles                         90
+Skin Care                      77
+Skin                           69
+Eyes                           43
+Mufflers                       38
+Shoe Accessories               24
+Sports Equipment               21
+Gloves                         20
+Hair                           19
+Bath and Body                  12
+Water Bottle                    7
+Perfumes                        6
+Umbrellas                       6
+Beauty Accessories              4
+Wristbands                      4
+Sports Accessories              3
+Home Furnishing                 1
+Vouchers                        1
+Name: subCategory, dtype: int64Tshirts                7070
+Shirts                 3217
+Casual Shoes           2846
+Watches                2542
+Sports Shoes           2036
+                       ... 
+Shoe Laces                1
+Mens Grooming Kit         1
+Body Wash and Scrub       1
+Suits                     1
+Ipad                      1
+Name: articleType, Length: 143, dtype: int64Black                9732
+White                5540
+Blue                 4922
+Brown                3494
+Grey                 2741
+Red                  2458
+Green                2116
+Pink                 1861
+Navy Blue            1791
+Purple               1643
+Silver               1090
+Yellow                779
+Beige                 749
+Gold                  629
+Maroon                581
+Orange                530
+Olive                 410
+Multi                 394
+Cream                 390
+Steel                 315
+Charcoal              228
+Peach                 195
+Off White             182
+Skin                  179
+Lavender              162
+Grey Melange          146
+Khaki                 139
+Magenta               129
+Teal                  120
+Tan                   114
+Mustard                97
+Bronze                 95
+Copper                 86
+Turquoise Blue         69
+Rust                   66
+Burgundy               45
+Metallic               43
+Coffee Brown           31
+Mauve                  29
+Rose                   28
+Nude                   23
+Sea Green              22
+Mushroom Brown         16
+Taupe                  11
+Lime Green              6
+Fluorescent Green       5
+Name: baseColour, dtype: int64Summer    21476
+Fall      11445
+Winter     8519
+Spring     2985
+Name: season, dtype: int642012.0    16290
+2011.0    13689
+2016.0     6007
+2017.0     2917
+2015.0     2780
+2013.0     1213
+2010.0      846
+2018.0      405
+2014.0      236
+2019.0       33
+2009.0       20
+2008.0        7
+2007.0        2
+Name: year, dtype: int64Casual          34414
+Sports           4025
+Ethnic           3208
+Formal           2359
+Smart Casual       67
+Party              29
+Travel             26
+Home                1
+Name: usage, dtype: int64Lucera Women Silver Earrings                       82
+Lucera Women Silver Pendant                        56
+Lucera Women Silver Ring                           50
+Catwalk Women Black Heels                          48
+Q&Q Men Black Dial Watch                           42
+                                                   ..
+Spykar Men Navy Blue Trevor Brief                   1
+Nike Mens White Polo T-shirt                        1
+Belmonte Men Solid Blue Shirts                      1
+Puma Men's Toe Crusher Black T-shirt                1
+Fossil Women Pink Dial Chronograph Watch ES3050     1
+Name: productDisplayName, Length: 31135, dtype: int64Men       22165
+Women     18632
+Unisex     2164
+Boys        830
+Girls       655
+Name: gender, dtype: int64Apparel           21400
+Accessories       11289
+Footwear           9222
+Personal Care      2404
+Free Items          105
+Sporting Goods       25
+Home                  1
+Name: masterCategory, dtype: int64Topwear                     15405
+Shoes                        7344
+Bags                         3055
+Bottomwear                   2694
+Watches                      2542
+Innerwear                    1808
+Jewellery                    1080
+Eyewear                      1073
+Fragrance                    1012
+Sandal                        963
+Wallets                       933
+Flip Flops                    915
+Belts                         811
+Socks                         698
+Lips                          527
+Dress                         478
+Loungewear and Nightwear      470
+Saree                         427
+Nails                         329
+Makeup                        307
+Headwear                      293
+Ties                          258
+Accessories                   143
+Scarves                       118
+Cufflinks                     108
+Apparel Set                   106
+Free Gifts                    104
+Stoles                         90
+Skin Care                      77
+Skin                           69
+Eyes                           43
+Mufflers                       38
+Shoe Accessories               24
+Sports Equipment               21
+Gloves                         20
+Hair                           19
+Bath and Body                  12
+Water Bottle                    7
+Perfumes                        6
+Umbrellas                       6
+Beauty Accessories              4
+Wristbands                      4
+Sports Accessories              3
+Home Furnishing                 1
+Vouchers                        1
+Name: subCategory, dtype: int64Tshirts                7070
+Shirts                 3217
+Casual Shoes           2846
+Watches                2542
+Sports Shoes           2036
+                       ... 
+Shoe Laces                1
+Mens Grooming Kit         1
+Body Wash and Scrub       1
+Suits                     1
+Ipad                      1
+Name: articleType, Length: 143, dtype: int64Black                9732
+White                5540
+Blue                 4922
+Brown                3494
+Grey                 2741
+Red                  2458
+Green                2116
+Pink                 1861
+Navy Blue            1791
+Purple               1643
+Silver               1090
+Yellow                779
+Beige                 749
+Gold                  629
+Maroon                581
+Orange                530
+Olive                 410
+Multi                 394
+Cream                 390
+Steel                 315
+Charcoal              228
+Peach                 195
+Off White             182
+Skin                  179
+Lavender              162
+Grey Melange          146
+Khaki                 139
+Magenta               129
+Teal                  120
+Tan                   114
+Mustard                97
+Bronze                 95
+Copper                 86
+Turquoise Blue         69
+Rust                   66
+Burgundy               45
+Metallic               43
+Coffee Brown           31
+Mauve                  29
+Rose                   28
+Nude                   23
+Sea Green              22
+Mushroom Brown         16
+Taupe                  11
+Lime Green              6
+Fluorescent Green       5
+Name: baseColour, dtype: int64Summer    21476
+Fall      11445
+Winter     8519
+Spring     2985
+Name: season, dtype: int642012.0    16290
+2011.0    13689
+2016.0     6007
+2017.0     2917
+2015.0     2780
+2013.0     1213
+2010.0      846
+2018.0      405
+2014.0      236
+2019.0       33
+2009.0       20
+2008.0        7
+2007.0        2
+Name: year, dtype: int64Casual          34414
+Sports           4025
+Ethnic           3208
+Formal           2359
+Smart Casual       67
+Party              29
+Travel             26
+Home                1
+Name: usage, dtype: int64Lucera Women Silver Earrings                       82
+Lucera Women Silver Pendant                        56
+Lucera Women Silver Ring                           50
+Catwalk Women Black Heels                          48
+Q&Q Men Black Dial Watch                           42
+                                                   ..
+Spykar Men Navy Blue Trevor Brief                   1
+Nike Mens White Polo T-shirt                        1
+Belmonte Men Solid Blue Shirts                      1
+Puma Men's Toe Crusher Black T-shirt                1
+Fossil Women Pink Dial Chronograph Watch ES3050     1
 Name: productDisplayName, Length: 31135, dtype: int64

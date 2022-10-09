@@ -49,7 +49,13 @@ def data_info_gen():
     for item in fashion_dat[1:]:
         out.write('\r')
         out.write(str(fashion_df[f'{item}'].value_counts()))
+
+        print("\r ")
+        print(fashion_df[f'{item}'].value_counts())
+        print("\r ")
+
         out.write('\r')
+
 
 
 data_info_gen()
