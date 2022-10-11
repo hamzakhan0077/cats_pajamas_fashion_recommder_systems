@@ -10,10 +10,9 @@ from pprint import pprint
 import random
 
 test_df = pd.read_csv("datasets/all_mix.csv")
-
 articles_df = pd.read_csv("datasets/articles_sample.csv")
-
 transaction_df = pd.read_csv("datasets/transactions_sample.csv")
+
 # transaction_df = transaction_df[transaction_df['t_dat'] > '2020-08-01'].copy()
 # transaction_df.to_csv('datasets/transactions_sample.csv')
 
@@ -24,10 +23,11 @@ pd.set_option("display.max_rows", None)
 
 
 def product_info():
-    print(articles_df.shape)
+    # print(articles_df.shape)
+    # print(articles_df.columns)
     # print(articles_df['prod_name'].describe(), '\n')
     # print(articles_df['prod_name'].value_counts(dropna=False), '\n')
-
+    #
     # print(articles_df['product_group_name'].describe(), '\n')
     # print(articles_df['product_group_name'].value_counts(dropna=False),'\n')
     #
@@ -39,13 +39,13 @@ def product_info():
     #
     # print(articles_df['graphical_appearance_name'].describe(), '\n')
     # print(articles_df['graphical_appearance_name'].value_counts(dropna=False), '\n')
-
+    #
     # print(transaction_df['article_id'].value_counts())
     # print(articles_df[articles_df['article_id'] == 706016001])
     # print(articles_df[articles_df['article_id'] == 918292001])
 
-
-    pass
+    df = transaction_df.merge(articles_df ,left_on='article_id', right_on='article_id')
+    print(df.shape)
 
 
 
@@ -110,19 +110,22 @@ def  popularity_recommender(customer):
     for product in popular_products:
         print(articles_df[['prod_name','product_group_name','colour_group_name']][articles_df['article_id'] == product],'\n')
 
-popularity_recommender(customers[1])
+# popularity_recommender(customers[1])
 
 
 
 
 def data_info():
-    print(transaction_df.shape)
-    print(articles_df.shape)
-    print(customers_df.shape)
-
-
+    # print(transaction_df.shape)
+    # print(articles_df.shape)
+    # print(customers_df.shape)
+    #
+    #
     print(len(transaction_df['customer_id'].unique()))
     print(customers_df['customer_id'].shape)
+
+    print(len(transaction_df['article_id'].unique()))
+    print(articles_df['article_id'].count())
 
     # for j in transaction_df['article_id'].values:
     #     print(j)
@@ -150,4 +153,4 @@ def data_info():
 
     # print(customers_df[customers_df['customer_id'].values in transaction_df['customer_id'].values])
 
-# data_info()
+data_info()
