@@ -64,11 +64,12 @@ def customer_info():
     # print(transaction_df.groupby('customer_id')['price'].aggregate('sum'))
     # print(transaction_df.groupby('customer_id')['price'].aggregate('sum').describe())
     # print(transaction_df.groupby('customer_id')['price'].aggregate('sum').nlargest(3))
+    # print(transaction_df['customer_id'][transaction_df['article_id']==706016001 ].values[0])
 
 
 
 
-# customer_info()
+customer_info()
 
 def transaction_info():
     print(transaction_df.shape)
@@ -95,22 +96,27 @@ customers = customers_df.to_records()[-5:]
 
 
 def random_recommender(customer):
-    print(f"{customer.customer_id} ", random.choice(articles_df[['article_id','product_group_name','prod_name','colour_group_name']].values))
+    # print(f"{customer.customer_id} ", np.random.choice(articles_df['article_id'].values,5))
+    return random.sample(sorted(articles_df['article_id'].values),5)
 
 
+# print(random_recommender(customers[0]))
 # for customer in customers:
 #     random_recommender(customer)
-
-
+#
+#
 
 
 def  popularity_recommender(customer):
     # Top 5 most bought
     popular_products = transaction_df['article_id'].value_counts().nlargest(5).to_frame()['article_id'].keys().values
-    for product in popular_products:
-        print(articles_df[['prod_name','product_group_name','colour_group_name']][articles_df['article_id'] == product],'\n')
+    return popular_products
+    # for product in popular_products:
+    #     print(product)
+        # print(articles_df[['prod_name','product_group_name','colour_group_name']][articles_df['article_id'] == product],'\n')
+        # print(articles_df['article_id'][articles_df['article_id'] == product].values,'\n')
 
-# popularity_recommender(customers[1])
+# print(popularity_recommender(customers[1]))
 
 
 
@@ -153,4 +159,58 @@ def data_info():
 
     # print(customers_df[customers_df['customer_id'].values in transaction_df['customer_id'].values])
 
-data_info()
+# data_info()
+
+
+
+def random_recommender_evaluation():
+    # Randomly choose 100 users
+    # take 20 % of data per user eg if a user has 100 transactions we take 20
+    # for each customer recommend them items
+    # check how many of those recommendation are actually in their purchases
+
+    random_customers = np.random.choice(customers_df['customer_id'].values,10)
+    relevant_recommendation = 0
+    precision_per_customer = []
+    for customer in random_customers :
+        recommended_items = random_recommender(customer)
+        for item in recommended_items:
+            if item in transaction_df[['customer_id','article_id']][transaction_df['customer_id'] == customer]['article_id'].values:
+                relevant_recommendation += 1
+        precision_per_customer.append(relevant_recommendation/len(recommended_items))
+        relevant_recommendation *= 0
+    return sum(precision_per_customer)/len(precision_per_customer)
+
+
+
+
+def popularity_recommender_evaluation():
+    random_customers = customers_df['customer_id'].values[-10:]
+    print(len(random_customers))
+    # random_customers = ['06b253c1f2946179fdef2598b59e9df4bf01d6be4f015ab6ae2d8dd5723d2745']
+    popular_items = popularity_recommender(popularity_recommender(random_customers[0])) # it will  recommend same items to every customer
+    relevant_recommendation = 0
+    precision_per_customer = []
+    # print(706016001 in transaction_df[['customer_id', 'article_id']][transaction_df['customer_id'] == random_customers[0]][
+    #             'article_id'].values)
+
+    for customer in random_customers:
+        recommended_items = popular_items
+        for item in popular_items:
+            if item in transaction_df[['customer_id', 'article_id']][transaction_df['customer_id'] == customer][
+                'article_id'].values:
+                relevant_recommendation += 1
+        precision_per_customer.append(relevant_recommendation / len(recommended_items))
+        relevant_recommendation *= 0
+    return sum(precision_per_customer) / len(precision_per_customer)
+
+
+
+
+
+# print(random_recommender_evaluation())
+
+print(popularity_recommender_evaluation())
+
+
+
