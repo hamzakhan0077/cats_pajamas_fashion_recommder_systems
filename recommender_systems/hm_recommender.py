@@ -8,7 +8,7 @@ import numpy.linalg as npla
 from math import sqrt
 from pprint import pprint
 import random
-
+from sklearn.model_selection import train_test_split
 test_df = pd.read_csv("datasets/all_mix.csv")
 articles_df = pd.read_csv("datasets/articles_sample.csv")
 transaction_df = pd.read_csv("datasets/transactions_sample.csv")
@@ -69,7 +69,7 @@ def customer_info():
 
 
 
-customer_info()
+# customer_info()
 
 def transaction_info():
     print(transaction_df.shape)
@@ -210,7 +210,47 @@ def popularity_recommender_evaluation():
 
 # print(random_recommender_evaluation())
 
-print(popularity_recommender_evaluation())
+# print(popularity_recommender_evaluation())
 
 
+def sparsity():
+    out = {} # (product , Number of times purchased)
+    sparsity_of_each_product = {}
+    cust_sample = customers_df.sample(frac=0.001, replace=True, random_state=1)
+    product_types = articles_df['product_type_name'].drop_duplicates().count() # 34293 - Numpy Array
+     # 34293
+    print(customers_df.shape)
+    print(cust_sample.shape)
+    product_list = []
+    # All the customer ID
+    for customer in cust_sample['customer_id'].values: # Complexity - O(Number of custoemrs)
+        # Get their purchases out of THEIR transactions
+        for purchased in transaction_df[transaction_df['customer_id'] == customer]['article_id'].drop_duplicates().values:
+            # see what did they purchases
+            product = articles_df['product_type_name'][articles_df['article_id'] == purchased].values[0]
+            # add the item if it is not arleady there - eg 2 trousers will count as 1
+            if product not in product_list:
+                product_list.append(product)
 
+        # then for every product that they bought calculate the sparsity
+        for unique_product in product_list:
+            if unique_product in out.keys():
+                out[unique_product]+=1
+            else:
+                out[unique_product] = 1
+        product_list.clear()
+    for p_type in out.keys():
+        sparsity = 1 - out[p_type]/ customers_df['customer_id'].count() * product_types
+        sparsity_of_each_product[p_type] = sparsity
+    print(len(sparsity_of_each_product))
+    print(articles_df['product_type_name'].drop_duplicates().count())
+    return sparsity_of_each_product
+
+# print(sparsity()) # takes 30 sec for 359 Custs
+# estimated 5 mins for 3500 customers
+# for 359222 customers the estimated computation time is 500 Minutes - 8.3 hrs
+# can we make it faster ?
+
+# This should work because they way we split our initial data, Eveyr product has one customer
+# this meaans since the abouve code computes sparsity for each customer
+# they every pproducts, sparsity will be computer
