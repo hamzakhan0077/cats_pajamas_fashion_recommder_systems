@@ -7,12 +7,15 @@ from sklearn.model_selection import train_test_split
 
 
 
-articles_df = pd.read_csv("datasets/articles_sample.csv")
-transaction_df = pd.read_csv("datasets/transactions_sample.csv")
-customers_df = pd.read_csv("datasets/customers_sample.csv")
+# articles_df = pd.read_csv("datasets/articles_sample.csv")
+# transaction_df = pd.read_csv("datasets/transactions_sample.csv")
+# customers_df = pd.read_csv("datasets/customers_sample.csv")
+# pd.set_option("display.max_rows", None)
+articles_df = pd.read_csv("datasets/articles_transactions_5.csv")
+T = pd.read_csv("Datasets/transactions_5.csv")
 pd.set_option("display.max_rows", None)
 
-T = pd.read_csv("datasets/transactions_5.csv")
+# T = pd.read_csv("datasets/transactions_5.csv")
 u = T['customer_id'].drop_duplicates().to_frame()
 test_u = u.sample(n=1000, random_state = 1)
 test_t = pd.DataFrame()
@@ -24,7 +27,40 @@ for i,cust in enumerate(test_u['customer_id']):
     T.drop(labels = indexs, axis = 0,inplace=True )
     print(i)
 
-print(test_t.shape)
+def random_recommender(customer):
+    return random.sample(sorted(articles_df['article_id'].values), 5)
+
+
+def popularity_recommender(customer):
+    popular_products = T['article_id'].value_counts().nlargest(5).to_frame()['article_id'].keys().values
+    return popular_products
+
+precision_list_popularity = []
+precision_list_random = []
+for j,user in enumerate(test_u['customer_id']):
+    popular_recommendations = popularity_recommender(u)
+    random_recommendations = random_recommender(u)
+    u_purchases = test_t[test_t['customer_id'] == user]['article_id'].values
+    precision_list_popularity.append(len(np.intersect1d(popular_recommendations,u_purchases))/5)
+    precision_list_random.append(len(np.intersect1d(random_recommendations,u_purchases))/5)
+    print(j)
+print("MEAN Precison of Popularity Recommender",sum(precision_list_popularity)/len(precision_list_popularity))
+print("MEAN Precison of Random Recommender",sum(precision_list_random)/len(precision_list_random))
+
+
+
+
+# for customer in random_customers:
+#     recommended_items = popular_items
+#     for item in popular_items:
+#         if item in transaction_df[['customer_id', 'article_id']][transaction_df['customer_id'] == customer][
+#             'article_id'].values:
+#             relevant_recommendation += 1
+#     precision_per_customer.append(relevant_recommendation / len(recommended_items))
+#     relevant_recommendation *= 0
+# return sum(precision_per_customer) / len(precision_per_customer)
+#
+
 # transaction_df = pd.read_csv("transactions_5.csv")
 # print(transaction_df)
 """

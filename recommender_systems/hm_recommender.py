@@ -127,11 +127,11 @@ def data_info():
     # print(customers_df.shape)
     #
     #
-    print(len(transaction_df['customer_id'].unique()))
-    print(customers_df['customer_id'].shape)
-
-    print(len(transaction_df['article_id'].unique()))
-    print(articles_df['article_id'].count())
+    # print(len(transaction_df['customer_id'].unique()))
+    # print(customers_df['customer_id'].shape)
+    #
+    # print(len(transaction_df['article_id'].unique()))
+    # print(articles_df['article_id'].count())
 
     # for j in transaction_df['article_id'].values:
     #     print(j)
@@ -139,16 +139,19 @@ def data_info():
     # print(articles_df.shape)
     # print(customers_df.shape)
     # print(9475280014 in transaction_df['article_id'].values)
+    T = pd.read_csv("datasets/transactions_5.csv")
+    A = pd.read_csv("datasets/articles.csv")
     # merged_df = transaction_df.merge(articles_df)
-    # merged_df = merged_df[['article_id', 'product_code', 'prod_name', 'product_type_no',
-    #    'product_type_name', 'product_group_name', 'graphical_appearance_no',
-    #    'graphical_appearance_name', 'colour_group_code', 'colour_group_name',
-    #    'perceived_colour_value_id', 'perceived_colour_value_name',
-    #    'perceived_colour_master_id', 'perceived_colour_master_name',
-    #    'department_no', 'department_name', 'index_code', 'index_name',
-    #    'index_group_no', 'index_group_name', 'section_no', 'section_name',
-    #    'garment_group_no', 'garment_group_name', 'detail_desc']].copy().drop_duplicates()
-    # merged_df.to_csv('datasets/articles_sample.csv')
+    merged_df = T.merge(A)
+    merged_df = merged_df[['article_id', 'product_code', 'prod_name', 'product_type_no',
+       'product_type_name', 'product_group_name', 'graphical_appearance_no',
+       'graphical_appearance_name', 'colour_group_code', 'colour_group_name',
+       'perceived_colour_value_id', 'perceived_colour_value_name',
+       'perceived_colour_master_id', 'perceived_colour_master_name',
+       'department_no', 'department_name', 'index_code', 'index_name',
+       'index_group_no', 'index_group_name', 'section_no', 'section_name',
+       'garment_group_no', 'garment_group_name', 'detail_desc']].copy().drop_duplicates()
+    merged_df.to_csv('datasets/articles_transactions_5.csv')
 
 
 
@@ -246,7 +249,7 @@ def sparsity():
     print(articles_df['product_type_name'].drop_duplicates().count())
     return sparsity_of_each_product
 
-print(sparsity()) # takes 30 sec for 359 Custs
+# print(sparsity()) # takes 30 sec for 359 Custs
 # estimated 5 mins for 3500 customers`
 # for 359222 customers the estimated computation time is 500 Minutes - 8.3 hrs
 # can we make it faster ?
