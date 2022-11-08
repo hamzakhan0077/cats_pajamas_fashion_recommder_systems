@@ -14,11 +14,20 @@ from sklearn.model_selection import train_test_split
 articles_df = pd.read_csv("datasets/articles_transactions_5.csv")
 T = pd.read_csv("Datasets/transactions_5.csv")
 pd.set_option("display.max_rows", None)
+# pd.set_option("display.max_columns", None)
+
+test_i = articles_df.sample(n=5000, random_state = 1)
+
+# for precision
+
+# test_t = pd.read_csv("Datasets/transactions_test_set.csv")
+# test_u = test_t['customer_id'].values
 
 # T = pd.read_csv("datasets/transactions_5.csv")
 u = T['customer_id'].drop_duplicates().to_frame()
 test_u = u.sample(n=1000, random_state = 1)
 test_t = pd.DataFrame()
+print("Creating Test Set")
 for i,cust in enumerate(test_u['customer_id']):
     cust_transac = T[T['customer_id'] == cust]
     bottom_transac = cust_transac[-1 * round(0.20 * len(cust_transac)):]
@@ -26,6 +35,7 @@ for i,cust in enumerate(test_u['customer_id']):
     indexs = bottom_transac.index
     T.drop(labels = indexs, axis = 0,inplace=True )
     print(i)
+# test_t.to_csv("Datasets/transactions_test_set.csv")
 
 def random_recommender(customer):
     return random.sample(sorted(articles_df['article_id'].values), 5)
@@ -35,17 +45,59 @@ def popularity_recommender(customer):
     popular_products = T['article_id'].value_counts().nlargest(5).to_frame()['article_id'].keys().values
     return popular_products
 
+
+def content_based_recommender(customer):
+    similarity = pd.DataFrame()
+    i = test_i.copy()
+    customer_trasnsactions = T[T['customer_id'] == customer]
+    # create profile
+    customer_profile = set()
+    a_set = set()
+    # Add to profile and remove the items this customer bought
+    for item in customer_trasnsactions['article_id'].drop_duplicates().values:
+        # print(i[['product_type_name','product_group_name','colour_group_name','detail_desc']][i['article_id'] == item].values[0])
+        for words in articles_df[['product_type_name','product_group_name','colour_group_name','detail_desc']][articles_df['article_id'] == item].values:
+          for word in words:
+              customer_profile.add(word)
+        i = i[i['article_id'] != item]
+
+    for test_item in i['article_id']:
+        for test_item_words in i[['product_type_name', 'product_group_name', 'colour_group_name', 'detail_desc']][i['article_id'] == test_item].values:
+            for test_word in test_item_words:
+                a_set.add(test_word)
+        similarity = similarity.append({"customer_id":customer,
+                                        "article_id":str(test_item),
+                                        "similarity":len(customer_profile.intersection(a_set))},ignore_index=True)
+
+    # is always sotres so picking bottom 5 as this is in acending order
+    return [int(number) for number in similarity[['article_id','similarity']][-5:]['article_id'].values]
+    # print(similarity['article_id'][similarity['similarity'].nlargest(5)])
+# content_based_recommender('65cb62c794232651e2ac711faa11c2b4e3d41d5f3b59b50bee3ffde1d5776644')
+
+# 65cb62c794232651e2ac711faa11c2b4e3d41d5f3b59b50bee3ffde1d5776644
+
+print("RUNNING PRECISION TEST")
 precision_list_popularity = []
 precision_list_random = []
-for j,user in enumerate(test_u['customer_id']):
-    popular_recommendations = popularity_recommender(u)
-    random_recommendations = random_recommender(u)
+precision_list_content = []
+for j,user in enumerate(u['customer_id'].values):
+    popular_recommendations = popularity_recommender(user)
+
+    random_recommendations = random_recommender(user)
+
+    # content_recommendations = content_based_recommender(user)
+
     u_purchases = test_t[test_t['customer_id'] == user]['article_id'].values
     precision_list_popularity.append(len(np.intersect1d(popular_recommendations,u_purchases))/5)
     precision_list_random.append(len(np.intersect1d(random_recommendations,u_purchases))/5)
+    # precision_list_content.append(len(np.intersect1d(content_recommendations, u_purchases)) / 5)
     print(j)
+
 print("MEAN Precison of Popularity Recommender",sum(precision_list_popularity)/len(precision_list_popularity))
 print("MEAN Precison of Random Recommender",sum(precision_list_random)/len(precision_list_random))
+# print("MEAN Precison of Content Based Recommender" ,sum(precision_list_content)/len(precision_list_content))
+
+
 
 
 
