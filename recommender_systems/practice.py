@@ -10,10 +10,11 @@ from pprint import pprint
 
 # mv_df = pd.read_csv("datasets/movies.csv")
 # rt_df = pd.read_csv("datasets/ratings.csv")
-fashion_df = pd.read_csv("datasets/fashion/all_mix.csv")
-fashion_dat = ['id', 'gender', 'masterCategory', 'subCategory', 'articleType', 'baseColour', 'season', 'year',
-                   'usage', 'productDisplayName']
-
+# fashion_df = pd.read_csv("datasets/fashion/all_mix.csv")
+fashion_df =''
+# fashion_dat = ['id', 'gender', 'masterCategory', 'subCategory', 'articleType', 'baseColour', 'season', 'year',
+#                    'usage', 'productDisplayName']
+import shutil
 def data():
     # print(fashion_df.columns)
     # print(fashion_df.shape)
@@ -27,7 +28,7 @@ def data():
     # plt.axis([0, 5, 0, rows])
     # axis([xmin,xmax,ymin,ymax])
     gender_info = fashion_df['gender'].value_counts()
-    print(gender_info)
+    # print(gender_info)
 
     # plt.hist(fashion_df.gender)
     # plt.savefig('datasets/fashion/hist_dat/gender')
@@ -58,7 +59,7 @@ def data_info_gen():
 
 
 
-data_info_gen()
+# data_info_gen()
 
 
 
@@ -98,6 +99,21 @@ def playing_around():
     # pprint(dat)
     # return dat
     pass
+def images_sampling():
+    df = pd.read_csv("datasets/articles.csv")
+    trousers = df['article_id'][df["product_type_name"] == "Trousers"].values[5:50]
+    for t in trousers:
+        t = str(t)
+        print(t)
+        if "11" not in t:
+            src = f'datasets/images/{t[:3]}/{t}.jpg'
+            dst = 'datasets/image_sample/trousers'
+            shutil.copy(src,dst )
+    print(1)
+
+images_sampling()
+
+
 
 
 if __name__ == "__main__":
