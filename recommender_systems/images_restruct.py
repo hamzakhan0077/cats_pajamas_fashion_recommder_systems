@@ -40,3 +40,21 @@ the directory for it the second time it crashes saying that it already exist"""
 #     print(i)
 #
 #
+"""  03/03/2023
+- Preparing the transactions so that I only have the ones in which the
+product actually has the image,
+
+remove the ones that doesnt have tha image 
+
+- Get all the products off the transactions 
+- see if there is an image for that product otherwise remove it
+
+____________________________
+or
+____________________________
+
+write a recommender and when getting the images check if the image exists 
+
+"""
+
+
